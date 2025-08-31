@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My PWA Website</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>Welcome to My PWA Website!</h1>
+  <p>This website works offline and can be installed on your device.</p>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(() => console.log('Service Worker Registered')).catch(err => console.log('Service Worker registration failed:', err));
+    }
+  </script>
+</body>
+</html>
+
+
+
+json
+{
+  "name": "My PWA Website",
+  "short_name": "MyPWA",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007acc",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
+
+3. sw.js (Service Worker):
+
+js
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open('v1').then(cache => cache.addAll([
+      './',
+      './index.html',
+      './manifest.json',
+      './icon-192.png',
+      './icon-512.png'
+    ]))
+  );
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(response => response || fetch(event.request))
+  );
+});
+
