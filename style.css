@@ -45,14 +45,16 @@ nav a {
   min-width: 200px;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}profile-pic {
+}
+
+profile-pic {
   width: 150px;
   height: 150px;
   border-radius: 50%; /* Gol banata hai */
   border: 4px solid #007bff; /* Blue border */
   object-fit: cover;
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Shadow effect */
-
+}
 
 footer {
   text-align: center;
@@ -62,6 +64,7 @@ footer {
   margin-top: 40px;
 }
 ```
+
 
 
 
