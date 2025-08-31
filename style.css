@@ -1,0 +1,56 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+}
+
+header {
+  background: #20232a;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  background: #007bff;
+  color: white;
+  padding: 40px 20px;
+}
+
+.courses {
+  padding: 30px 20px;
+}
+
+.course-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.course-box {
+  background: white;
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  background: #20232a;
+  color: white;
+  padding: 10px;
+  margin-top: 40px;
+}
+```
+
